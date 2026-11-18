@@ -1,0 +1,30 @@
+# Cierra automáticamente los pull request de la entrega «Programa en ensamblador»
+# que lleguen después del plazo: martes 24 de noviembre de 2026 a las 10:00 (hora de Madrid).
+name: Plazo entrega ensamblador
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Entregas/Programa en ensamblador/**'
+
+permissions:
+  pull-requests: write
+
+jobs:
+  plazo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cerrar si está fuera de plazo
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          PLAZO=$(date -u -d '2026-11-24T09:00:00Z' +%s)   # 10:00 en Madrid
+          AHORA=$(date -u +%s)
+          if [ "$AHORA" -gt "$PLAZO" ]; then
+            gh pr close "$PR" --repo "$REPO" --comment "El plazo de entrega terminó el martes 24 de noviembre a las 10:00 (hora de Madrid). Esta entrega queda fuera de plazo."
+          else
+            echo "Entrega dentro de plazo."
+          fi
