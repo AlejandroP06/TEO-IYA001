@@ -1,30 +1,44 @@
-# Cierra automáticamente los pull request de la entrega «Programa en ensamblador»
-# que lleguen después del plazo: martes 24 de noviembre de 2026 a las 10:00 (hora de Madrid).
+# Entrega «Programa en ensamblador»: plazo martes 24 de noviembre de 2026 a las 10:00 (hora de Madrid).
+# Los pull request abiertos después del plazo se marcan con la etiqueta «Fuera de plazo» (no se cierran).
+# Si la profesora acepta uno de ellos, se añade el comentario «Aceptado fuera de plazo».
 name: Plazo entrega ensamblador
 
 on:
   pull_request_target:
-    types: [opened, reopened, synchronize]
+    types: [opened, reopened, closed]
     paths:
       - 'Entregas/Programa en ensamblador/**'
 
 permissions:
   pull-requests: write
+  issues: write
 
 jobs:
   plazo:
     runs-on: ubuntu-latest
     steps:
-      - name: Cerrar si está fuera de plazo
+      - name: Marcar fuera de plazo o avisar de la aceptación
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ github.event.pull_request.number }}
           REPO: ${{ github.repository }}
+          ACCION: ${{ github.event.action }}
+          ACEPTADO: ${{ github.event.pull_request.merged }}
+          CREADO: ${{ github.event.pull_request.created_at }}
+          ETIQUETAS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
         run: |
           PLAZO=$(date -u -d '2026-11-24T09:00:00Z' +%s)   # 10:00 en Madrid
-          AHORA=$(date -u +%s)
-          if [ "$AHORA" -gt "$PLAZO" ]; then
-            gh pr close "$PR" --repo "$REPO" --comment "El plazo de entrega terminó el martes 24 de noviembre a las 10:00 (hora de Madrid). Esta entrega queda fuera de plazo."
+          ENVIADO=$(date -u -d "$CREADO" +%s)
+          if [ "$ACCION" = "closed" ]; then
+            if [ "$ACEPTADO" = "true" ] && echo ",$ETIQUETAS," | grep -q ",Fuera de plazo,"; then
+              gh pr comment "$PR" --repo "$REPO" --body "Aceptado fuera de plazo."
+            fi
+          elif [ "$ENVIADO" -gt "$PLAZO" ]; then
+            gh label create "Fuera de plazo" --repo "$REPO" --color D93F0B --description "Entrega enviada después del plazo" 2>/dev/null || true
+            gh pr edit "$PR" --repo "$REPO" --add-label "Fuera de plazo"
+            if [ "$ACCION" = "opened" ]; then
+              gh pr comment "$PR" --repo "$REPO" --body "Esta entrega se envió después del plazo (martes 24 de noviembre a las 10:00, hora de Madrid) y queda marcada como fuera de plazo. La profesora decidirá si la acepta."
+            fi
           else
             echo "Entrega dentro de plazo."
           fi
