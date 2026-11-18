@@ -2,7 +2,7 @@
 
 **Plazo:** hasta el **martes 24 de noviembre de 2026 a las 10:00** (hora de Madrid). Para esa hora el *pull request* tiene que estar enviado y aceptado, porque los programas se presentan ese día en clase.
 
-Los *pull request* que lleguen después de las 10:00 se cierran automáticamente como fuera de plazo.
+Los *pull request* que lleguen después de las 10:00 se marcan automáticamente como **fuera de plazo**, y la profesora decide si los acepta.
 
 Desarrolla un pequeño programa en lenguaje ensamblador con el [simulador de ensamblador](http://schweigi.github.io/assembler-simulator/index.html) y súbelo a esta carpeta.
 
