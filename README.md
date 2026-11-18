@@ -7,6 +7,14 @@ Material de clase en Markdown para GitHub: presentaciones de cada tema y el docu
 
 Consulta [cómo usar este repositorio](COMO-USAR.md) si es la primera vez que entras. El material también está publicado en la [página web](https://loyda-alas.github.io/TEO-IYA001/).
 
+## Anuncio
+
+![SobaoFest II · DevFest Santander 2026](Anuncios/SobaoFest-2026.gif)
+
+## Entregas
+
+- [Programa en lenguaje ensamblador](Entregas/Programa%20en%20ensamblador/README.md): para el martes 24 de noviembre.
+
 ## Índice
 
 | Tema | Presentación | Ejercicios | Contenido completo | PDF |
@@ -29,6 +37,8 @@ Consulta [cómo usar este repositorio](COMO-USAR.md) si es la primera vez que en
 - **Contenido completo/** — libro de la asignatura (PDF + un Markdown por capítulo, numerados `Capítulo 01` … `Capítulo 20`).
 - **Tema NN/** — presentación correspondiente (Markdown + PDF; solo figuras de contenido, sin capturas de diapositiva ni portadas). Los números van con cero a la izquierda para que GitHub los ordene bien.
 - **Tema NN/Ejercicios/** — ejercicios del tema (cuando existen), dentro de la misma carpeta.
+- **Entregas/** — carpetas para subir las tareas de la asignatura.
+- **Anuncios/** — avisos para el alumnado.
 - **Tema 04/Parte 1/** y **Parte 2/** — las dos partes de la presentación del tema 4.
 - Cada tema enlaza a su(s) capítulo(s) del contenido completo, y cada capítulo enlaza de vuelta a su presentación.
 
