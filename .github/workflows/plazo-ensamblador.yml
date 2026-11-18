@@ -1,0 +1,34 @@
+# Entrega «Programa en ensamblador» (rama programa-ensamblador).
+# Plazo: martes 24 de noviembre de 2026 a las 10:00 (hora de Madrid).
+# Los pull request abiertos después del plazo se marcan con la etiqueta «Fuera de plazo».
+# Los pull request no se aceptan: se quedan abiertos y la profesora los corrige con comentarios.
+name: Plazo entrega ensamblador
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+    branches: [programa-ensamblador]
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  plazo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Marcar fuera de plazo
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+          CREADO: ${{ github.event.pull_request.created_at }}
+        run: |
+          PLAZO=$(date -u -d '2026-11-24T09:00:00Z' +%s)   # 10:00 en Madrid
+          ENVIADO=$(date -u -d "$CREADO" +%s)
+          if [ "$ENVIADO" -gt "$PLAZO" ]; then
+            gh pr edit "$PR" --repo "$REPO" --add-label "Fuera de plazo"
+            gh pr comment "$PR" --repo "$REPO" --body "Esta entrega se envió después del plazo (martes 24 de noviembre a las 10:00, hora de Madrid) y queda marcada como fuera de plazo."
+          else
+            echo "Entrega dentro de plazo."
+          fi
