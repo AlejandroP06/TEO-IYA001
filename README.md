@@ -13,7 +13,7 @@ Consulta [cómo usar este repositorio](COMO-USAR.md) si es la primera vez que en
 
 ## Entregas
 
-- [Programa en lenguaje ensamblador](Entregas/Programa%20en%20ensamblador/README.md): pull request enviado y aceptado hasta el martes 24 de noviembre a las 10:00.
+- [Programa en lenguaje ensamblador](Entregas/Programa%20en%20ensamblador.md): pull request hasta el martes 24 de noviembre a las 10:00. [Cómo entregar](Entregas/README.md).
 
 ## Índice
 
@@ -37,7 +37,7 @@ Consulta [cómo usar este repositorio](COMO-USAR.md) si es la primera vez que en
 - **Contenido completo/** — libro de la asignatura (PDF + un Markdown por capítulo, numerados `Capítulo 01` … `Capítulo 20`).
 - **Tema NN/** — presentación correspondiente (Markdown + PDF; solo figuras de contenido, sin capturas de diapositiva ni portadas). Los números van con cero a la izquierda para que GitHub los ordene bien.
 - **Tema NN/Ejercicios/** — ejercicios del tema (cuando existen), dentro de la misma carpeta.
-- **Entregas/** — carpetas para subir las tareas de la asignatura.
+- **Entregas/** — enunciados de las entregas. Las entregas se hacen por pull request a la rama de cada una.
 - **Anuncios/** — avisos para el alumnado.
 - **Tema 04/Parte 1/** y **Parte 2/** — las dos partes de la presentación del tema 4.
 - Cada tema enlaza a su(s) capítulo(s) del contenido completo, y cada capítulo enlaza de vuelta a su presentación.
