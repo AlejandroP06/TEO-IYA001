@@ -13,7 +13,7 @@ Consulta [cómo usar este repositorio](COMO-USAR.md) si es la primera vez que en
 
 ## Entregas
 
-- [Programa en lenguaje ensamblador](Entregas/Programa%20en%20ensamblador/README.md): para el martes 24 de noviembre.
+- [Programa en lenguaje ensamblador](Entregas/Programa%20en%20ensamblador/README.md): pull request enviado y aceptado hasta el martes 24 de noviembre a las 10:00.
 
 ## Índice
 
