@@ -4,7 +4,7 @@ Las entregas son individuales y se hacen mediante *pull request* desde el fork d
 
 <div align=center>
 
-|Entrega|Fecha de entrega|Rama|
+|Entrega|Fecha límite|Rama|
 |-|:-:|:-:|
 |[Programa en lenguaje ensamblador](Programa%20en%20ensamblador.md)|martes 24/nov/2026, 10:00|`programa-ensamblador`|
 

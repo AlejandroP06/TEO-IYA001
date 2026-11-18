@@ -1,6 +1,6 @@
 # Entrega: programa en lenguaje ensamblador
 
-> Fecha de entrega: **martes 24 de noviembre de 2026, 10:00** (hora de Madrid) · Rama: `programa-ensamblador`
+> Fecha límite: **martes 24 de noviembre de 2026, 10:00** (hora de Madrid) · Rama: `programa-ensamblador`
 
 Desarrolla un pequeño programa en lenguaje ensamblador con el [simulador de ensamblador](http://schweigi.github.io/assembler-simulator/index.html). Los programas se presentan ese mismo día en clase.
 
