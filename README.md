@@ -9,7 +9,7 @@ Consulta [cómo usar este repositorio](COMO-USAR.md) si es la primera vez que en
 
 ## Anuncio
 
-![SobaoFest II · DevFest Santander 2026](Anuncios/SobaoFest-2026.gif)
+[![SobaoFest II · DevFest Santander 2026](Anuncios/SobaoFest-2026.gif)](https://gdg.community.dev/events/details/google-gdg-santander-presents-devfest-santander-2026-vuelve-el-sobaofest-ii/)
 
 ## Entregas
 
