@@ -1,4 +1,4 @@
-# Presentaciones de compañeros en clase
+# Exposiciones de alumnos
 
 Presentaciones que los equipos de la asignatura Tecnología y Estructura de Ordenadores (IYA001) expusieron en clase. Cada grupo preparó un tema del temario.
 
