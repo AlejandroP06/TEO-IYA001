@@ -38,6 +38,7 @@ Consulta [cómo usar este repositorio](COMO-USAR.md) si es la primera vez que en
 - **Tema NN/** — presentación correspondiente (Markdown + PDF; solo figuras de contenido, sin capturas de diapositiva ni portadas). Los números van con cero a la izquierda para que GitHub los ordene bien.
 - **Tema NN/Ejercicios/** — ejercicios del tema (cuando existen), dentro de la misma carpeta.
 - **Entregas/** — enunciados de las entregas. Las entregas se hacen por pull request a la rama de cada una.
+- **Presentaciones-de-companeros/** — [Presentaciones de compañeros en clase](Presentaciones-de-companeros/README.md): una presentación en PDF por grupo, con título y autores.
 - **Anuncios/** — avisos para el alumnado.
 - **Tema 04/Parte 1/** y **Parte 2/** — las dos partes de la presentación del tema 4.
 - Cada tema enlaza a su(s) capítulo(s) del contenido completo, y cada capítulo enlaza de vuelta a su presentación.
